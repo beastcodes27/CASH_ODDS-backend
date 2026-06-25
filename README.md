@@ -97,3 +97,20 @@ JWT_SECRET=your-secret-key-here
 Verification requests support image uploads via imgbb. The frontend uploads images to imgbb and sends the URLs to the backend.
 
 Imgbb API Key: `3aa324878a27b8ebaea52aaa9b5aa01d`
+
+## Troubleshooting & Server Deployment
+
+### Composer Security Advisories Resolution
+When running `composer update` on production servers (`cashodds.devtz.com`), Composer 2.7+ may block installation of specific package versions affected by Packagist security advisories.
+
+This repository includes pre-configured audit settings in `composer.json` (`"audit": { "block-insecure": false }`).
+
+If you still encounter advisory warnings during deployment, you can run:
+
+```bash
+# Update dependencies bypassing security advisory block
+composer update --no-audit
+
+# Or install with optimization for production
+composer install --no-dev --optimize-autoloader --no-audit
+```
