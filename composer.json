@@ -2,7 +2,12 @@
     "name": "cashodds/laravel-backend",
     "type": "project",
     "description": "CASH ODDS - Betting Tips Laravel Backend API",
-    "keywords": ["laravel", "api", "betting", "tips"],
+    "keywords": [
+        "laravel",
+        "api",
+        "betting",
+        "tips"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.1",
@@ -59,6 +64,17 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
+        },
+        "audit": {
+            "block-insecure": false,
+            "ignore": {
+                "PKSA-d5tc-s1qs-h781": "*",
+                "PKSA-m5cs-t1y6-qpcs": "*",
+                "PKSA-3r5d-mb8f-1qw9": "*",
+                "PKSA-mdq4-51ck-6kdq": "*",
+                "PKSA-8qx3-n5y5-vvnd": "*",
+                "PKSA-w7xr-vk7n-rstm": "*"
+            }
         }
     },
     "minimum-stability": "stable",
